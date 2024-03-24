@@ -1,0 +1,139 @@
+//1
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double nota;
+
+        do {
+            System.out.print("Digite uma nota entre zero e dez: ");
+            nota = scanner.nextDouble();
+            if (nota < 0 || nota > 10) {
+                System.out.println("Valor inválido! Digite novamente.");
+            }
+        } while (nota < 0 || nota > 10);
+
+        System.out.println("Nota válida: " + nota);
+    }
+}
+//2
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String nome, senha;
+
+        do {
+            System.out.print("Digite seu nome de usuário: ");
+            nome = scanner.nextLine();
+            System.out.print("Digite sua senha: ");
+            senha = scanner.nextLine();
+            if (senha.equals(nome)) {
+                System.out.println("Erro: senha não pode ser igual ao nome de usuário. Tente novamente.");
+            }
+        } while (senha.equals(nome));
+
+        System.out.println("Cadastro realizado com sucesso!");
+    }
+}
+//3
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String nome, sexo, estadoCivil;
+        int idade;
+        double salario;
+
+        do {
+            System.out.print("Digite seu nome: ");
+            nome = scanner.nextLine();
+        } while (nome.length() <= 3);
+
+        do {
+            System.out.print("Digite sua idade: ");
+            idade = scanner.nextInt();
+        } while (idade < 0 || idade > 150);
+
+        do {
+            System.out.print("Digite seu salário: ");
+            salario = scanner.nextDouble();
+        } while (salario <= 0);
+
+        do {
+            System.out.print("Digite seu sexo (f/m): ");
+            sexo = scanner.next().toLowerCase();
+        } while (!sexo.equals("f") && !sexo.equals("m"));
+
+        do {
+            System.out.print("Digite seu estado civil (s/c/v/d): ");
+            estadoCivil = scanner.next().toLowerCase();
+        } while (!estadoCivil.equals("s") && !estadoCivil.equals("c") && !estadoCivil.equals("v") && !estadoCivil.equals("d"));
+
+        System.out.println("Informações válidas:");
+        System.out.println("Nome: " + nome);
+        System.out.println("Idade: " + idade);
+        System.out.println("Salário: " + salario);
+        System.out.println("Sexo: " + sexo);
+        System.out.println("Estado Civil: " + estadoCivil);
+    }
+}
+//4
+public class Main {
+    public static void main(String[] args) {
+        int populacaoA = 80000;
+        double taxaCrescimentoA = 0.03;
+        int populacaoB = 200000;
+        double taxaCrescimentoB = 0.015;
+        int anos = 0;
+
+        while (populacaoA <= populacaoB) {
+            populacaoA += populacaoA * taxaCrescimentoA;
+            populacaoB += populacaoB * taxaCrescimentoB;
+            anos++;
+        }
+
+        System.out.println("Serão necessários " + anos + " anos para que a população do país A ultrapasse a do país B.");
+    }
+}
+//5
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double populacaoA, taxaCrescimentoA, populacaoB, taxaCrescimentoB;
+        int anos = 0;
+
+        System.out.print("Digite a população do país A: ");
+        populacaoA = scanner.nextDouble();
+
+        System.out.print("Digite a taxa de crescimento do país A (em decimal): ");
+        taxaCrescimentoA = scanner.nextDouble();
+
+        System.out.print("Digite a população do país B: ");
+        populacaoB = scanner.nextDouble();
+
+        System.out.print("Digite a taxa de crescimento do país B (em decimal): ");
+        taxaCrescimentoB = scanner.nextDouble();
+
+        while (populacaoA <= populacaoB) {
+            populacaoA += populacaoA * taxaCrescimentoA;
+            populacaoB += populacaoB * taxaCrescimentoB;
+            anos++;
+        }
+
+        System.out.println("Serão necessários " + anos + " anos para que a população do país A ultrapasse a do país B.");
+    }
+}
+Programa para imprimir números de 1 a 20:
+java
+Copy code
+public class Main {
+    public static void main(String[] args) {
+        // Imprimir um abaixo do outro
+        for (int i = 1; i <= 20; i++) {
+            System.out.println(i);
+        }
+
+        // Imprimir um ao lado do outro
+        for (int i = 1; i <= 20; i++) {
+            System.out.print(i + " ");
+        }
+    }
+}
